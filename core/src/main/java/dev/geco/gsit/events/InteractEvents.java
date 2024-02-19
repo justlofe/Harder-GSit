@@ -44,6 +44,9 @@ public class InteractEvents implements Listener {
 
         if(!player.isValid() || player.isSneaking()) return;
 
+        if(player.getLocation().getY() + 0.7 < clickedBlock.getY() && player.getLocation().getY() + 0.7 != clickedBlock.getY()) return;
+        if(player.getTargetBlock(null, 5) != clickedBlock) return;
+
         if(GPM.getSitManager().isSitting(player) || GPM.getPoseManager().isPosing(player) || GPM.getCrawlManager().isCrawling(player)) return;
 
         double distance = GPM.getCManager().S_MAX_DISTANCE;
